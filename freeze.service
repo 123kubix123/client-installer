@@ -1,0 +1,12 @@
+[Unit]
+Description=Mrozenie pracownia
+After=local-fs.target
+DefaultDependencies=no
+
+[Service]
+Type=oneshot
+ExecStart=/sbin/freeze.sh
+
+[Install]
+WantedBy=basic.target
+RequiredBy=multi-user.target

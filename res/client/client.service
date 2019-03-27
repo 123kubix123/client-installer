@@ -1,0 +1,14 @@
+[Unit]
+Description=Home Directory Client
+
+[Service]
+Type=simple
+ExecStart=/opt/pracownia/bin/pracownia-client
+ExecReload=/bin/kill -HUP $MAINPID
+KillMode=process
+Restart=on-failure
+User=root
+Group=root
+
+[Install]
+WantedBy=multi-user.target
